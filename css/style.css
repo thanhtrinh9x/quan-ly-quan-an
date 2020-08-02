@@ -1,0 +1,84 @@
+/* CSS Document */
+/*
+.container {
+	width:940px; 	
+	padding:20px 0 20px 0;
+	margin:0 auto;
+}
+*/
+
+
+.san_pham:hover{
+/*	background: #CCC9C9;*/
+	-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  -ms-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+	
+
+	
+}
+.san_pham img {
+	width: 100%;
+	height: 190px;
+	margin-top: 10px;
+}
+.gia {
+	color: red;
+}
+.a1 {
+	 text-decoration: none;
+	color: #090202;
+}
+.a1:hover {
+	text-decoration: none;
+}
+.nut_mua{
+	
+	background-color: white;
+	color: #804204;
+	border: 2px solid #804204;
+    padding: 10px 20px;
+	margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+.nut_mua:hover {
+	background-color: #804204; /* Green */
+    border: none;
+    color: white;
+}
+.so_luong {
+	width: 50%;
+	height: 40px;
+	text-align: center;
+	
+}
+.p1 {
+	height: 57px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+   
+}
+.chi_tiet {
+	margin:30px 0 30px 0;
+	
+}
+.ben_trai {
+	width: 450px;
+	padding: 10px;
+	float: left;
+	
+	
+}
+.ben_trai img {
+	width: 100%;
+}
+.ben_phai {
+	width: 450px;
+	float: right;
+	
+}
+
