@@ -34,6 +34,7 @@
           <li><a href="nhaphang.php">NHẬP HÀNG</a></li>
           <li><a href="doanhthu.php">DOANH THU</a></li>
           <li><a href="hoadon.php">HÓA ĐƠN</a></li>
+          <li><a href="users.php">NHÂN VIÊN</a></li>
         </ul>
         <!-- <ul class="nav navbar-nav navbar-right">
           <li><a href="user.php"><span class="glyphicon glyphicon-user"></span>Thông tin Nhân viên</a></li>

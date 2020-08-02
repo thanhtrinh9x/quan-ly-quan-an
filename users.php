@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-thead .tr .th {
-    text-align:center;
-}
 td {
     text-align:center;
 }
@@ -22,7 +19,7 @@ $connect -> query($lenh);
     <input class="form-control" id="myInput" type="text" placeholder="Lựa chọn của bạn..">   
     <br>       
     <table class="table table-bordered table-striped">
-      <thead>
+      <!-- <thead> -->
         <tr>
           <th>MÃ NHÂN VIÊN</th>
           <th>USERNAME</th>
@@ -31,7 +28,7 @@ $connect -> query($lenh);
           <th>EMAIL</th>
           <th>ĐỊA CHỈ</th>
         </tr>
-      </thead>
+      <!-- </thead> -->
       <tbody id="myTable">
         <?php
         $sql = "select * from tbl_user";
@@ -52,7 +49,7 @@ $connect -> query($lenh);
         ?>
       </tbody>
     </table>
-    <a href="#" target="_self"><b><big>Cập nhập nhân viên</big></b></a>
+    <a href="updateuser.php" target="_self"><b><big>Cập nhập nhân viên</big></b></a>
   </div>
   <br>
 
