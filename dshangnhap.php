@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
-include 'include/index.php';
+include 'include/indexSU.php';
 include 'include/function.php';
 $connect = connectDB();
 $lenh = "USE qly_cafe";

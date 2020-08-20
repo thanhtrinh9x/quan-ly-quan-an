@@ -27,19 +27,27 @@ if ($_POST)
         }
       }
       else
-      {
+      { 
         $tencu = checkInput($_POST['tencu']);
-        $sql = "SELECT manv FROM tbl_user WHERE username = '$tencu'";
+        $sql = "SELECT username FROM nhanvien WHERE username = '$tencu'";
         $thucthi = $connect->query($sql);
         $row = $thucthi->fetch_assoc();
-        $manv = checkInput($row['manv']);
-        
-        $fullname = $_POST['fullname'];
+        $manv = checkInput($row['username']);
+        $id = $_POST['id'];
+        $username = checkInput($_POST['username']);
         $password = $_POST['password'];
-        $tel = $_POST['tel'];
-        $email = $_POST['email'];
-        $address = $_POST['address'];
-          $sql = "UPDATE tbl_user SET password = '$password', fullname = '$fullname', tel = '$tel', email = '$email', address = '$address' WHERE manv = '$manv'";
+				$hoten = $_POST['hoten'];
+				$gioitinh = $_POST['gioitinh'];
+				$ngaysinh = $_POST['ngaysinh'];
+				$diachi = $_POST['diachi'];
+				$cmnd = $_POST['cmnd'];
+				$email = $_POST['email'];
+        $sdt = $_POST['sdt']; 
+        
+          $sql = "UPDATE nhanvien SET 
+          id = '$id',username = '$username',password = '$password',
+          hoten = '$hoten',gioitih = '$gioitinh',ngaysinh = '$ngaysinh',diachi = '$diachi',cmnd = '$cmnd', email = '$email', sdt = '$sdt' 
+            WHERE username = '$username'";
           
           $thucthi = $connect->query($sql);
           if ($thucthi){
@@ -58,11 +66,15 @@ if ($_POST)
 <div class="container">
   <form method="POST">
     <div class="form-group">
+			<label for="id">ID:</label>
+			<input type="text" class="form-control" id="id" name="id" placeholder="Nhập mã nhân viên">
+		</div>
+    <div class="form-group">
       <label for="tencu">Tên nhân viên muốn sửa:</label>
       <select id="tencu" name="tencu" class="form-control">
         <option value="">--Chọn--</option>
         <?php
-        $sql = "select username from tbl_user";
+        $sql = "select username from nhanvien";
         $result = $connect->query($sql);
         while ($row = $result->fetch_assoc())
         {
@@ -77,28 +89,35 @@ if ($_POST)
 		<div class="form-group">
 			<label for="password">Mật khẩu:</label>
 			<input type="password" class="form-control" id="password" name="password" placeholder="Nhập mật khẩu">
-			<!-- <?php if(isset($giaspError)){echo $giaspError;}?> -->
-		</div>
-
+            <?php if(isset($passError)){echo $passError;}?>
+        </div>
         <div class="form-group">
-			<label for="fullname">Họ và Tên:</label>
-			<input type="text" class="form-control" id="fullname" name="fullname" placeholder="Nhập họ và tên">
-			<!-- <?php if(isset($tenspError)){echo $tenspError;}?> -->
+			<label for="hoten">Họ và Tên:</label>
+			<input type="text" class="form-control" id="hoten" name="hoten" placeholder="Nhập họ và tên">
+		</div>
+		<div class="form-group">
+			<label for="gioitinh">Giới tính:</label>
+			<input type="text" class="form-control" id="gioitinh" name="gioitinh" placeholder="Giới tính">
+		</div>
+		<div class="form-group">
+			<label for="ngaysinh">Ngày Sinh:</label>
+			<input type="text" class="form-control" id="ngaysinh" name="ngaysinh" placeholder="Nhập ngày sinh">
+		</div>
+		<div class="form-group">
+			<label for="cmnd">CMND:</label>
+			<input type="text" class="form-control" id="cmnd" name="cmnd" placeholder="Số chứng minh nhân dân">
 		</div>
         <div class="form-group">
-			<label for="tel">Điện thoại:</label>
-			<input type="text" class="form-control" id="tel" name="tel" placeholder="Nhập điện thoại">
-			<!-- <?php if(isset($tenspError)){echo $tenspError;}?> -->
+			<label for="sdt">Điện thoại:</label>
+			<input type="text" class="form-control" id="sdt" name="sdt" placeholder="Nhập điện thoại">
 		</div>
         <div class="form-group">
 			<label for="email">Email:</label>
 			<input type="text" class="form-control" id="email" name="email" placeholder="Nhập email">
-			<!-- <?php if(isset($tenspError)){echo $tenspError;}?> -->
 		</div>
         <div class="form-group">
-			<label for="address">Địa chỉ:</label>
-			<input type="text" class="form-control" id="address" name="address" placeholder="Nhập địa chỉ">
-			<!-- <?php if(isset($tenspError)){echo $tenspError;}?> -->
+			<label for="diachi">Địa chỉ:</label>
+			<input type="text" class="form-control" id="diachi" name="diachi" placeholder="Nhập địa chỉ">
 		</div>
     <div class="container" style="padding-left: 430px;">
       <input type="submit" style="height: 40px; width: 150px; background-color:#50ba18; font-size: 120%; font-weight: bold;" class="btn btn-default" name="nutnhan2" value="SỬA">

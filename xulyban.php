@@ -13,7 +13,7 @@ if( !empty($_POST['setup'])){
 	}
 	if ($setup == "Trống")
 	{
-		$sql = "SELECT * FROM ordersp WHERE idban = '$idban' AND trangthai = 0";
+		$sql = "UPDATE ban SET TrangThai = 0 WHERE IDBan = '$idban'";
 		$query= $connect->query($sql);
 		$rows= mysqli_num_rows($query);
 		if($rows > 0){
@@ -27,39 +27,12 @@ if( !empty($_POST['setup'])){
 			header('Location:trangchu.php');
 		}
 	}
-	if( $setup == "Hủy"){
-		$sql = "UPDATE ban SET TrangThai = 0 WHERE IDBan = '$idban'";
-		$thucthi = $connect->query($sql);
-		$sql = "DELETE FROM datban WHERE SoBan = '$idban'";
-		$thucthi = $connect->query($sql);
-		header('Location:trangchu.php');
-	}
-	if($setup == "Đã đến"){
-		$sql = "UPDATE ban SET TrangThai = 1 WHERE IDBan = '$idban'";
-		$thucthi = $connect->query($sql);
-		$sql = "DELETE FROM datban WHERE SoBan = '$idban'";
-		$thucthi = $connect->query($sql);
-		header('Location:trangchu.php');
-	}
-	if($setup == "Có khách"){
-		$sql = "UPDATE ban SET TrangThai = 1 WHERE IDBan = '$idban'";
-		$thucthi = $connect->query($sql);
-		header('Location:trangchu.php');
-	}
-	if($setup == "Đặt trước"){
-		session_start();
-		$_SESSION['soban'] = $idban;
-		header('Location:nvdat.php');
-	}
 	if($setup == "Order"){
 		session_start();
 		$_SESSION['soban'] = $idban;
+		$sql = "UPDATE ban SET TrangThai = 1 WHERE IDBan = '$idban'";
+		$thucthi = $connect->query($sql);
 		header('Location:order.php');
-	}
-	if($setup == "Thông tin"){
-		session_start();
-		$_SESSION['soban'] = $idban;
-		header('Location:thongtin.php');
 	}
 }
 ?>

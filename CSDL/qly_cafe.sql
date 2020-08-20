@@ -184,22 +184,28 @@ INSERT INTO `kho` (`MaHang`, `Ten`, `DVT`, `SLT`) VALUES
 --
 -- Cấu trúc bảng cho bảng `nhanvien`
 --
-
+                                        
 CREATE TABLE `nhanvien` (
-  `ID` varchar(20) COLLATE utf8_vietnamese_ci NOT NULL,
-  `TenNV` varchar(50) COLLATE utf8_vietnamese_ci NOT NULL,
-  `NgaySinh` date NOT NULL,
-  `DiaChi` text COLLATE utf8_vietnamese_ci NOT NULL,
-  `CMND` varchar(15) COLLATE utf8_vietnamese_ci NOT NULL,
-  `Password` varchar(20) COLLATE utf8_vietnamese_ci NOT NULL
+  `id` varchar(20)  NOT NULL,
+  `hoten` varchar(50) COLLATE utf8_vietnamese_ci NOT NULL,
+  `gioitinh` VARCHAR(10) COLLATE utf8_vietnamese_ci NOT NULL,
+  `ngaysinh` date NOT NULL,
+  `diachi` text(100) COLLATE utf8_vietnamese_ci NOT NULL,
+  `cmnd` varchar(15)  NOT NULL,
+  `email` varchar(50)  NOT NULL,
+  `sdt` varchar(11) NOT NULL,
+  `username` varchar(20)  NOT NULL,
+  `password` varchar(20)  NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `nhanvien`
 --
 
-INSERT INTO `nhanvien` (`ID`, `TenNV`, `NgaySinh`, `DiaChi`, `CMND`, `Password`) VALUES
-('NV1', 'Nguyễn Hoàng Nam', '1996-04-27', 'Quận 9', '215400990', 'namka');
+INSERT INTO `nhanvien` 
+( `id`, `hoten`, `gioitinh`, `ngaysinh`,`diachi`, `cmnd`, `email`,`sdt`,`username`, `password`) VALUES
+( 'NV1', 'Nguyễn Hoàng Nam', 'nam', '1996-04-27', 'Quận 9', '215400990','namka@gmail.com', '0987654321', 'namka', 'namka');
+
 
 -- --------------------------------------------------------
 

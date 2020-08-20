@@ -1,10 +1,10 @@
 <?php
+include 'include/index.php';
 include 'include/function.php';
 $connect = connectDB();
 $lenh = "USE qly_cafe";
 $connect -> query($lenh);
 $arrayOrder = array();
-session_start();
 $arrayOrder['idban'] = $_SESSION['soban'];
 if ($_POST)
 {
@@ -57,10 +57,12 @@ if ($_POST)
 <style>
 .order {
 	width:600px;
+	border: 2px solid black;
 }
 .order table,.order th,.order tr,.order td {
 	border: 0px solid black;
-	border-collapse: collapse;
+	border-collapse: collapse;	
+
 }
 th, td {
 	padding: 15px;
@@ -73,22 +75,26 @@ th, td {
 	width: 700px;
 }
 .show {
+	top:100px;
 	border-collapse: collapse;
 }
 .show table,.show th,.show tr,.show td {
-	border: 1px solid black;
+	border: 2px solid black;
 }
+#one td,tr {
+        border: 2px solid black; 
+    }
 </style>
 <table class="order">
 	<div class="container">
 		<form method="POST">
-			<tr>
+			<tr id="one">
 				<th colspan="2"><strong><b>ORDER ĐỒ UỐNG</b></strong></th>
 			</tr>
 			<tr>
 				<td colspan="2"><strong>SỐ BÀN: <?php echo $arrayOrder['idban'] ?></strong></td>
 			</tr>
-			<tr>
+			<tr id="one">
 				<td><strong>Đồ uống: </strong></td>
 				<td><div class="form-group"><select id="tenhang" name="tensp" class="form-control" style="width: 100%; height: 30px;">
 					<option value="">--Chọn--</option>
@@ -104,7 +110,7 @@ th, td {
 					?>
 				</select></div></td>
 			</tr>
-			<tr>
+			<tr id="one">
 				<td><strong>Số lượng: </strong></td>
 				<td><div class="form-group"><input type="number" name="slsp" min="1" style="width: 100%; height: 30px;"></div></td>
 			</tr>
@@ -115,7 +121,7 @@ th, td {
 			<tr>
 				<th colspan="2"><strong><b>XUẤT/HỒI KHO</b></strong></th>
 			</tr>
-			<tr>
+			<tr id="one">
 				<td><strong>Sản phẩm: </strong></td>
 				<td><div class="form-group"><select id="inkho" name="tenspinkho" class="form-control" style="width: 100%; height: 30px;">
 					<option value="">--Chọn--</option>
@@ -131,7 +137,7 @@ th, td {
 					?>
 				</select></div></td>
 			</tr>
-			<tr>
+			<tr id="one">
 				<td><strong>Số lượng: </strong></td>
 				<td><div class="form-group"><input type="number" step="0.1" name="slxk" min="0" style="width: 100%; height: 30px;"></div></td>
 			</tr>
@@ -145,7 +151,10 @@ th, td {
 		</form>
 	</div>
 </table>
-<table class="show" >
+
+<table class="show"  >
+
+	
 	<thead>
 		<tr>
 			<th colspan="3"><strong><b>DANH SÁCH ĐÃ ORDER</b></strong></th>
@@ -173,4 +182,4 @@ th, td {
 		?>
 	</tbody>
 </table>
-
+	</div>

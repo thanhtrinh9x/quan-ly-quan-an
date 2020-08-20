@@ -18,7 +18,7 @@ if ($_POST)
       else
       {
         $username = checkInput($_POST['username']);
-        $sql = "DELETE FROM tbl_user WHERE username = '$username'";
+        $sql = "DELETE FROM nhanvien WHERE username = '$username'";
         $thucthi = $connect->query($sql);
         if ($thucthi)
           phpAlert("Xóa nhân viên thành công!");
@@ -36,7 +36,7 @@ if ($_POST)
       <select id="username" name="username" class="form-control">
         <option value="">--Chọn--</option>
         <?php
-        $sql = "select username from tbl_user";
+        $sql = "select username from nhanvien";
         $result = $connect->query($sql);
         while ($row = $result->fetch_assoc())
         {

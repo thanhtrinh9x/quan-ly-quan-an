@@ -22,8 +22,11 @@ $connect -> query($lenh);
       <!-- <thead> -->
         <tr>
           <th>MÃ NHÂN VIÊN</th>
-          <th>USERNAME</th>
+          <th>TÊN ĐĂNG NHẬP</th>
           <th>HỌ VÀ TÊN</th>
+          <th>GIỚI TÍNH</th>
+          <th>NGÀY SINH</th>
+          <th>CMND</th>
           <th>ĐIỆN THOẠI</th>
           <th>EMAIL</th>
           <th>ĐỊA CHỈ</th>
@@ -31,18 +34,21 @@ $connect -> query($lenh);
       <!-- </thead> -->
       <tbody id="myTable">
         <?php
-        $sql = "select * from tbl_user";
+        $sql = "select * from nhanvien";
         $result = $connect->query($sql);
         while ($row = $result->fetch_assoc()) {
 
           ?>
           <tr>
-            <td><?php echo $row['manv'] ?></td>
+            <td><?php echo $row['id'] ?></td>
             <td><?php echo $row['username'] ?></td>
-            <td><?php echo $row['fullname'] ?></td>
-            <td><?php echo $row['tel'] ?></td>
+            <td><?php echo $row['hoten'] ?></td>
+            <td><?php echo $row['gioitinh'] ?></td>
+            <td><?php echo $row['ngaysinh'] ?></td>
+            <td><?php echo $row['cmnd'] ?></td>
+            <td><?php echo $row['sdt'] ?></td>
             <td><?php echo $row['email'] ?></td>
-            <td><?php echo $row['address'] ?></td>
+            <td><?php echo $row['diachi'] ?></td>
           </tr>
           <?php
         }

@@ -1,15 +1,15 @@
 <?php
-include 'updateuser.php';
+include 'include/index.php';
 include 'include/function.php';
 $connect = connectDB();
 $lenh = "USE qly_cafe";
 $connect -> query($lenh);
 if ($_POST)
 {
-	if (!empty($_POST['nutnhan1']))
+	if (!empty($_POST['dangky']))
 	{
-        $tuychon = $_POST['nutnhan1'];
-		if($tuychon == "LƯU")
+        $tuychon = $_POST['dangky'];
+		if($tuychon == "Đăng Ký")
 		{
             
 			if (empty($_POST['username']) || empty($_POST['password']))
@@ -37,10 +37,16 @@ if ($_POST)
 					$sql = "INSERT INTO nhanvien(id,hoten,gioitinh,ngaysinh,diachi,cmnd,email,sdt,username,password) 
 							VALUES('$id','$hoten', '$gioitinh', '$ngaysinh', '$diachi', '$cmnd', '$email', '$sdt', '$username','$password')";
 					$thucthi = $connect->query($sql);
-					if ($thucthi)
+					if ($thucthi){
 						phpAlert("Thêm nhân viên thành công");
-					else
+						header('Location: login.php');
+						exit;
+						
+					}
+					else{
 						phpAlert("Lỗi! Thêm nhân viên thất bại!");
+						
+					}
 			}
 		}
 	}
@@ -48,7 +54,8 @@ if ($_POST)
 ?>
 
 <div class="container">
-	<form method="POST">
+<h2 style="text-align: center;"><b>ĐĂNG KÝ NHÂN VIÊN</b></h2>
+	<form method="POST" class="login-form">
 		<div class="form-group">
 			<label for="id">ID:</label>
 			<input type="text" class="form-control" id="id" name="id" placeholder="Nhập mã nhân viên">
@@ -73,7 +80,7 @@ if ($_POST)
 		</div>
 		<div class="form-group">
 			<label for="ngaysinh">Ngày Sinh:</label>
-			<input type="text" class="form-control" id="ngaysinh" name="ngaysinh" placeholder="Nhập ngày sinh">
+			<input type="date" class="form-control" id="ngaysinh" name="ngaysinh" placeholder="Nhập ngày sinh">
 		</div>
 		<div class="form-group">
 			<label for="cmnd">CMND:</label>
@@ -92,8 +99,9 @@ if ($_POST)
 			<input type="text" class="form-control" id="diachi" name="diachi" placeholder="Nhập địa chỉ">
 		</div>
 		<div class="container" style="padding-left: 430px;">
-			<input type="submit" style="height: 40px; width: 150px; background-color:#50ba18; font-size: 120%; font-weight: bold;" class="btn btn-default" name="nutnhan1" value="LƯU">
-			<input type="reset" style="height: 40px; width: 150px; background-color:yellow; font-size: 120%; font-weight: bold;" class="btn btn-default" value="RESET"><br>
+			<input type="submit" style="height: 40px; width: 150px; background-color:; font-size: 120%; font-weight: bold;" class="btn btn-default" name="dangky" value="Đăng Ký">
+			<input type="button" style="height: 40px; width: 150px; background-color:; font-size: 120%; font-weight: bold;" class="btn btn-default" value="Quay về" 
+            onclick="window.location.href='trangchu.php'"><br>
 		</div>
 	</form>
 </div>
