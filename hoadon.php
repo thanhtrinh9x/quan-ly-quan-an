@@ -42,7 +42,7 @@ if (!empty($_POST['tim'])){
         <label for="ngay" style="width: 15%; position: absolute; right: 450px; top: 195px;">Ngày:</label>
         <input class="form-control" style="width: 15%; position: absolute; right: 400px; top: 185px;" type="date" name="ngay" id="ngay">
       </div>
-      <input type="submit" style="width: 10%; height: 34px; position: absolute; right: 105px; top: 185px;" name="tim" value="Tìm kiếm">
+      <input type="submit" style="width: 10%; height: 34px; position: absolute; right: 105px; top: 182px;" name="tim" value="Tìm kiếm">
     </form>
     <br>
     <br />       

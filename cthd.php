@@ -23,8 +23,9 @@ th, td {
 	padding: 15px;
 	text-align: center;
 }
+
 </style>
-<body>
+<body">
 	<h2><b><strong>CHI TIẾT HÓA ĐƠN</strong></b></h2>
 	<table>
 		<tr>

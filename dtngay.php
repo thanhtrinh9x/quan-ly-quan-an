@@ -30,7 +30,7 @@ if( !empty($_POST['xem'])){
 		<form method="POST">
 			<h2 style="text-align: center;"><b>DANH SÁCH SẢN PHẨM ĐÃ BÁN RA TRONG NGÀY:</b></h2>
 			<input class="form-control" style="width: 80%;" type="date" name="date" id="date">
-			<input style="position: absolute; right: 105px; top: 262px; width: 15%; height: 34px;" type="submit" name="xem" value="XEM">
+			<input style="position: absolute; right: 105px; top: 278px; width: 15%; height: 34px;" type="submit" name="xem" value="XEM">
 			<br>       
 			<table class="table table-bordered table-striped">
 				<thead>

@@ -29,12 +29,12 @@ body {
           <li><a href="hoadon.php">HÓA ĐƠN</a></li>
           <li>
           <?php if($_SESSION['Username']=="admin")
-          {echo '
+          echo '
           <li><a href="kho.php">KHO</a></li>
           <li><a href="nhaphang.php">NHẬP HÀNG</a></li>
           <li><a href="doanhthu.php">DOANH THU</a></li>
-          <li><a href="users.php">NHÂN VIÊN</a></li>}
-          ';}?>
+          <li><a href="users.php">NHÂN VIÊN</a></li>
+          ';?>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right"> 
@@ -45,8 +45,10 @@ body {
 		          <li><a class="dropdown-item" href="login.php" font>Đăng nhập</a></li>
 		          <li><a class="dropdown-item" href="register.php">Đăng ký</a></li>
 	          </ul>
-          </li>           
-          <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>Đăng xuất</a></li>
+          </li>
+          <?php if(isset($_SESSION['status']))
+            echo '<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>Đăng xuất</a></li>';
+          ?>
           </ul>
       </div>
     </div>

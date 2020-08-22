@@ -12,7 +12,7 @@ $connect -> query($lenh);
  <body style="background-image: url('images/bg.jpg');size:autobackground-size: cover;">
 
 <div class="container">
-        <div class="row">
+  <div class="row">
           <?php
           $sql = "select * from ban";
           $result = $connect->query($sql);
@@ -28,26 +28,19 @@ $connect -> query($lenh);
                     <input type="hidden" name="idban" value="<?php echo $row['IDBan'] ?>" size="30">
                     <input type="submit" name="setup" value="Order" style="background-color: #F4A460;">
                     <input type="submit" name="setup" formtarget="_blank" value="Tính tiền" style="background-color: #32CD32;">
-                    <input type="submit" name="setup" value="Trống" style="background-color: #32CD32;">
-                    
+                    <?php if($row['TrangThai'] == 0)
+                        echo '<input type="submit" name="setup" value="Trống" style="background-color: #32CD32;">';
+                    ?>
                   </div>
                   <div class="panel-body"><img style="height: 250px; width: 330px;" src="./images/<?php echo $row['HinhAnh'] ?>" class="img-responsive" style="width:100%;" alt="Image"></div>
-                  <?php if($row['TrangThai']=="1"){
-                            echo '<div class="panel-footer" align = "center">';
-                            echo "Bàn đã có khách";}
-                        else{echo '<div class="panel-footer" align = "center" background-color="red">';
-                            echo "Bàn trống";}
-                  ?></div>
+                  
                 </div>
               </div>
             </form>
             <?php
           }
           ?>     
-        </div>
-      </div>
-    </div>     
-    </div>
+          
   </div>
 </div>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
-include 'include/indexSU.php';
+include 'include/index.php';
 include 'include/function.php';
 $connect = connectDB();
 $lenh = "USE qly_cafe";
@@ -10,10 +10,10 @@ $connect -> query($lenh);
 <body>
 
   <div class="container">
-    <h2 style="text-align: center;"><b>DANH SÁCH HÀNG ĐÃ NHẬP</b></h2> 
+    <h2>DANH SÁCH HÀNG ĐÃ NHẬP</h2> 
     <div class="form-group">
       <label for="mahang">Chọn ngày muốn xem</label>
-      <input class="form-control" id="myInput" min="2017-01-01" type="date">
+      <input class="form-control" id="myInput" min="2019-01-01" type="date">
     </div>
     
     <br>       
