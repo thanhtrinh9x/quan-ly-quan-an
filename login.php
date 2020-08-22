@@ -47,9 +47,9 @@ if (isset($_POST["loginbt"])) {
   }
 }
 ?>
-<div class="container" >
+<div class="container">
 <h2 style="text-align: center;"><b>TRANG ĐĂNG NHẬP</b></h2>
-	<form class="login-form" method="POST" action="">
+	<form class="login-form login" method="POST" action="">
     <div class="login-form">
 			<label for="username">Tên đăng nhập:</label>
 			<input type="text" class="form-control" id="username" name="username" placeholder="Nhập tên đăng nhập">
@@ -62,8 +62,8 @@ if (isset($_POST["loginbt"])) {
         </div>
         <br><br>
         <div class="container" style="padding-left: 430px;">
-			<input type="submit" style="height: 40px; width: 150px; background-color:; font-size: 120%; font-weight: bold;" class="btn btn-default" name="loginbt" value="Đăng nhập">
-			<input type="button" style="height: 40px; width: 150px; background-color:; font-size: 120%; font-weight: bold;" class="btn btn-default" value="Đăng ký" 
+			<input type="submit" style="height: 40px; width: 150px; background-color:; font-size: 100%; font-weight: bold;" class="btn btn-default" name="loginbt" value="Đăng nhập">
+			<input type="button" style="height: 40px; width: 150px; background-color:; font-size: 100%; font-weight: bold;" class="btn btn-default" value="Đăng ký" 
             onclick="window.location.href='register.php'"><br>
 		</div>
 	</form>

@@ -1,6 +1,6 @@
 <?php session_start();?>
 <head>
-  <title>Quản lý Cafe</title>
+  <title>T&T COFFEE</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css">
@@ -24,7 +24,7 @@ body {
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="trangchu.php">COFFE-TQ</a></li>
+          <li class="active"><a href="trangchu.php">T&T COFFEE</a></li>
           <li><a href="menu.php">MENU ĐỒ UỐNG</a></li>
           <li><a href="hoadon.php">HÓA ĐƠN</a></li>
           <li>
@@ -46,9 +46,7 @@ body {
 		          <li><a class="dropdown-item" href="register.php">Đăng ký</a></li>
 	          </ul>
           </li>
-          <?php if(isset($_SESSION['status']))
-            echo '<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>Đăng xuất</a></li>';
-          ?>
+            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>Đăng xuất</a></li>
           </ul>
       </div>
     </div>

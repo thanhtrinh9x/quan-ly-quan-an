@@ -70,12 +70,9 @@ th, td {
 }
 .show {
 	position: absolute; 
-	right: 10px;
-	top: 10px;
+	right: -60px;
 	width: 700px;
-}
-.show {
-	top:100px;
+	top:116px;
 	border-collapse: collapse;
 }
 .show table,.show th,.show tr,.show td {

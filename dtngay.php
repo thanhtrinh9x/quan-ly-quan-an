@@ -52,7 +52,7 @@ if( !empty($_POST['xem'])){
 							<td><?php echo $row['STT'] ?></td>
 							<td><?php echo $row['TenSp'] ?></td>
 							<td><?php echo $row['SoLuong'] ?></td>
-							<td><?php echo $row['TongTien'] ?></td>
+							<td align="right"><?php echo $row['TongTien'] ?></td>
 						</tr>
 						<?php
 					}

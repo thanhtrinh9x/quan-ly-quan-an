@@ -218,7 +218,9 @@ button {
 				<td class="cotSo"><?php echo number_format(($tongtien),0,",",".")?></td>
 			</tr>
 		</table>
-		<div class="footer-right">Cảm ơn Quý Khách! Hẹn gặp lại!</div>
+		<div class="footer-right">Cảm ơn Quý Khách! Hẹn gặp lại!
+		<a href="trangchu.php">Trang Chủ </a>
+		</div>
 	</div>
 </body>
 <?php
